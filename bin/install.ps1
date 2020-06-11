@@ -66,7 +66,7 @@ dl $zipurl $zipfile
 Write-Output 'Extracting...'
 [IO.Compression.ZipFile]::ExtractToDirectory($zipfile, "$dir\_tmp")
 Copy-Item "$dir\_tmp\*-master\*" $dir -Recurse -Force
-Remove-Item "$dir\_tmp",-Recurse -Force
+Remove-Item "$dir\_tmp" -Recurse -Force
 Remove-Item $zipfile -Recurse -Force
 
 ensure_robocopy_in_path
